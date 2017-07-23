@@ -43,7 +43,7 @@ class TheGamesDbClient
     public function send($method, $uri, array $query = [], array $headers = [], $async = false)
     {
         $uri .= '?' . http_build_query($query);
-        var_dump($uri);
+        
         $promise = $this->httpClient->requestAsync($method, $uri, ['headers' => $headers]);
 
         return $async ? $promise : $promise->wait();
