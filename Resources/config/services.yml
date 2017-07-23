@@ -1,0 +1,7 @@
+services:
+    theGamesDb_api_client:
+        class:        bogdanfinn\TheGamesDbBundle\Http\TheGamesDbClient
+        arguments:    []
+    theGamesDb_game_client:
+        class:        bogdanfinn\TheGamesDbBundle\Http\GameClient
+        arguments:    ["@theGamesDb_api_client"]
