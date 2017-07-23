@@ -1,4 +1,4 @@
-# bogdanfinn/TheGamesDbBundle
+# bogdanfinn/theGamesDB-bundle
 A symfony bundle for accessing the http://thegamesdb.net/ Api
 
 
@@ -13,7 +13,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require bogdanfinn/TheGamesDbBundle
+$ composer require bogdanfinn/theGamesDB-bundle
 ```
 
 This command requires you to have Composer installed globally, as explained
