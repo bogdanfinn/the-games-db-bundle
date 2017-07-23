@@ -1,9 +1,9 @@
 {
-    "name": "bogdanfinn/theGamesDB-bundle",
+    "name": "bogdanfinn/the-games-db-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "A symfony bundle for accessing the http://thegamesdb.net/ Api",
-    "homepage": "https://github.com/bogdanfinn/theGamesDB-bundle",
+    "homepage": "https://github.com/bogdanfinn/the-games-db-bundle",
     "keywords": ["theGamesDB", "api", "symfony","bundle"],
     "authors": [
         {

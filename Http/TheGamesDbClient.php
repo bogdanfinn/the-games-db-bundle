@@ -43,7 +43,7 @@ class TheGamesDbClient
     public function send($method, $uri, array $query = [], array $headers = [], $async = false)
     {
         $uri .= '?' . http_build_query($query);
-        var_dump($uri);
+
         $promise = $this->httpClient->requestAsync($method, $uri, ['headers' => $headers]);
 
         return $async ? $promise : $promise->wait();
@@ -58,7 +58,7 @@ class TheGamesDbClient
      * @param bool $async
      * @return \stdClass
      */
-    public function xml($uri, $className, array $query = [], array $headers = [], $async = false)
+    public function xml($uri, array $query = [], array $headers = [], $async = false)
     {
         // always request json mime as response
         $headers = ['Accept' => 'application/xml'] + $headers;
@@ -67,8 +67,8 @@ class TheGamesDbClient
         $responsePromise = $this->send('GET', $uri, $query, $headers, true);
 
         // pass-through the failed invocation
-        $xmlPromise = $responsePromise->then(function (ResponseInterface $response) use ($className) {
-            return simplexml_load_string($response->getBody()->getContents(), $className);
+        $xmlPromise = $responsePromise->then(function (ResponseInterface $response) {
+            return simplexml_load_string($response->getBody()->getContents());
         });
 
         if ($async) {
