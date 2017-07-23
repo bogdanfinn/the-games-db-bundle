@@ -21,11 +21,11 @@ class GameClient
 
     public function searchGame($searchQuery)
     {
-        return $this->theGamesDbClient->xml("GetGamesList.php", Game::class, ['name'=>$searchQuery]);
+        return $this->theGamesDbClient->xml("GetGamesList.php", ['name'=>$searchQuery]);
     }
 
     public function getGameById($id)
     {
-        return $this->theGamesDbClient->xml("GetGame.php", Game::class, ['id'=>$id]);
+        return $this->theGamesDbClient->xml("GetGame.php", ['id'=>$id]);
     }
 }
